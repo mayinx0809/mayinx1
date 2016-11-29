@@ -1,0 +1,32 @@
+记录第一次使用的redis
+1.redis的下载官网地址：http://redis.io/download
+2.上传服务器 XShell或这FZ（当然这个软件个人觉得不是很好用）工具
+3.解压文件
+ tar zxf redis-3.2.1.tar.gz  得到   redis-3.2.1  
+进入解压后为文件   cd  redis-3.2.1  make执行
+
+4.修改配置文件 vim  redis.conf 修改端口  84行
+ 密码的设定  大致在451行，可以设定也可以不设置，看自己的需求。
+
+
+
+绑定本机IP 大致在61行  将127.0.0.1修改为本机的IP用于供client或者其他的来访问。
+bind 127.0.0.1(根据个人需求修改)   b
+bind 10.10.236.80
+
+5.启动服务redie-server
+ 
+cd src  之后再执行   ./redis-server /jboss/redis/redis-3.2.1/redis.conf
+
+
+查看启动进程ID 以及端口：ps -aux |grep redis
+
+
+客户端访问：./redis-cli -h 10.10.236.80 -p 6379 -a redisserver
+
+
+6.OK测试成功
+
+
+cd  D:\sunshine\redisTest\redis-latest
+redis-server.exe redis.windows.conf
